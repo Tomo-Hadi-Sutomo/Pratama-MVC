@@ -1,0 +1,13 @@
+{
+    "name": "pratama-mvc",
+    "type": "project",
+    "description": "Pratama MVC is Super Lighweight MVC Framework",
+    "homepage": "https://mvc.pratama.id",
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=7.0"
+    },
+    "require-dev": {
+        "php": ">=7.0"
+    }
+}
