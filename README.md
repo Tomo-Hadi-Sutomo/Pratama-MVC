@@ -1,2 +1,2 @@
 # Pratama MVC
- Pratama MVC is Lighweight MVC Micro Framework for Developer PHP MCV Applications. 
+ Pratama MVC is Super Lighweight MVC Framework for PHP Developer Whos Love small footprint and fast loading.
