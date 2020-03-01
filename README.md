@@ -7,7 +7,6 @@ File index.php (ROOT) :
 
 ```
 <?php /* TOMO - PRATAMA STUDIO */
-
 DECLARE(STRICT_TYPES=1);
 define('ROOT', dirname(__FILE__));
 require 'App.php';
@@ -23,10 +22,10 @@ File App.php
 DECLARE(STRICT_TYPES=1);
 class App {
 	//CONFIG
-	public $folder = '';
-	public $controller = 'index';
-	public $method = 'index';
-	public $template = 'default';
+	public $folder = ''; // ROOT Folder where index.php on
+	public $controller = 'index'; // Welcome Controller, when visitor visit Home Url (index.php)
+	public $method = 'index'; // Default method call when no other method declared
+	public $template = 'default'; // Default template render by App. You can use as many as template for each controllers. 
 	//END CONFIG
 	public $url = array();
 	public $params = array();
