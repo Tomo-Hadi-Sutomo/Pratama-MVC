@@ -4,6 +4,8 @@
     "description": "Pratama MVC is Super Lighweight MVC Framework",
     "homepage": "https://mvc.pratama.id",
     "license": "Apache-2.0",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=7.0"
     },
