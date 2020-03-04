@@ -60,7 +60,7 @@ class App {
 			define('CONTROLLER', 'index');
 			$controller = SISTEM . 'controllers/Index.php';
 			require_once($controller);
-			$name = $this->controller;
+			$name = ucfirst($this->controller);
 			$name2 = $this->method;
 			$start = new $name();
 			$start->$name2();
