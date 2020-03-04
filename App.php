@@ -26,7 +26,7 @@ class App {
 		$this->init();
 	}
 	private function init() {
-		$controller = SISTEM . 'controllers/' . $this->url[1] . '.php';
+		$controller = SISTEM . 'controllers/' . ucfirst($this->url[1]) . '.php';
 		if (file_exists($controller)) {
 			define('CONTROLLER', $this->url[1]);
 			require_once($controller);
@@ -58,7 +58,7 @@ class App {
 			define('METHOD', $method); //for use later
 		} else if (trim($this->url[1], '/') == '' || trim($this->url[1], '/') == 'index.php') {
 			define('CONTROLLER', 'index');
-			$controller = SISTEM . 'controllers/index.php';
+			$controller = SISTEM . 'controllers/Index.php';
 			require_once($controller);
 			$name = $this->controller;
 			$name2 = $this->method;
