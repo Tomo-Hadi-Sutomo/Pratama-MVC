@@ -3,9 +3,14 @@ DECLARE(STRICT_TYPES=1);
 class App {
 	//CONFIG
 	public $folder = '';
-	public $controller = 'index';
-	public $method = 'index';
-	public $template = 'default';
+	public $controller = 'index'; //Default controller
+	public $method = 'index'; // default method
+	public $template = 'default'; // default template
+	public static $host = 'localhost';
+	public static $username = 'root';
+	public static $password = '';
+	public static $database = 'absensi7';
+	public static $db;
 	//END CONFIG
 	public $url = array();
 	public $params = array();
@@ -13,6 +18,10 @@ class App {
 		define('SISTEM', $this->folder);
 		define('TEMPLATE', $this->template);
 		define('VERSION', 'Version 1.0');
+		APP::$db = mysqli_connect(APP::$host, APP::$username, APP::$password, APP::$database);
+		if(!APP::$db){
+			exit("Database Connecion error");
+		}
 		$path = $_SERVER['REQUEST_URI'];
 		$this->url = explode('/', $path);
 		unset($this->url[0]);
@@ -74,9 +83,19 @@ function base_url($args = null) {
 	$url .= "://" . $_SERVER['HTTP_HOST'];
 	$url .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
 	if ($args === null) {
-		echo $url;
+		return $url;
 	} else {
-		echo $url . $args;
+		return $url . $args;
+	}
+}
+function site_url($args = null) {
+	$url = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == "on") ? "https" : "http");
+	$url .= "://" . $_SERVER['HTTP_HOST'];
+	$url .= str_replace(basename($_SERVER['SCRIPT_NAME']), "", $_SERVER['SCRIPT_NAME']);
+	if ($args === null) {
+		return $url;
+	} else {
+		return $url . $args;
 	}
 }
 function csrf($length = 20) {
@@ -135,3 +154,9 @@ function error($custom_file = null) {
 		require_once($_view);
 	}
 }
+function elapsed_time() {
+	defined('START') OR exit('START Not Set!');
+	$speed = microtime(true) - START;
+	return number_format($speed,5,',', '.') . ' Detik';
+}
+
