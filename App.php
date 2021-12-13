@@ -40,7 +40,7 @@ class App {
 			define('CONTROLLER', $this->url[1]);
 			require_once($controller);
 			$name = ucfirst($this->url[1]);
-			$method = 'index';
+			//$method = 'index';
 			$params = null;
 			$start = new $name();
 			//One Param
