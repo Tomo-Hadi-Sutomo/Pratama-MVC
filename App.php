@@ -4,7 +4,7 @@ class App {
 	//CONFIG
 	public $folder = '';
 	public $controller = 'index'; //Default controller
-	public $method = 'index'; // default method
+	public $method = 'satu'; // default method
 	public $template = 'default'; // default template
 	public static $host = 'localhost';
 	public static $username = 'root';
