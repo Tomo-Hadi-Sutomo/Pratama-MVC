@@ -1,7 +1,7 @@
 <?php /* TOMO - PRATAMA STUDIO */
 DECLARE(STRICT_TYPES=1);
 class Index {
-	public function index() {
+	public function satu() {
 		$data['title'] = "Halaman Index - Pratama MVC is Running!";
 		render('welcome', $data);
 	}
